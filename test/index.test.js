@@ -16,13 +16,16 @@ test('It exports a setup function', (t) => {
 
 test('Setup function returns initial values', async (t) => {
   const res = await setup()
+
+  t.is(res.length, 14)
+
   const first = Object.assign({}, res[0])
   const date = first.HIREDATE
 
   delete first.HIREDATE
 
   t.deepEqual(first, {
-    EMPNO: 7360,
+    EMPNO: 7369,
     ENAME: 'SMITH',
     JOB: 'CLERK',
     MGR: 7902,
