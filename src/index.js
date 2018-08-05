@@ -7,7 +7,9 @@ const connection = mysql.createConnection({
   database: 'dev'
 })
 
-connection.connect()
+connection.connect(function (err) {
+  if (err) console.error(err)
+})
 
 function query (queryString) {
   return new Promise((resolve, reject) => {
@@ -16,10 +18,6 @@ function query (queryString) {
       return resolve(results)
     })
   })
-}
-
-async function insertSetupValues (values) {
-  await query(`INSERT INTO emp (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO) VALUES (${values});`)
 }
 
 async function setup () {
