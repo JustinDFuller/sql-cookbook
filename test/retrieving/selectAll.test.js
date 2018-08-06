@@ -17,6 +17,6 @@ test('SelectAll()', async function (t) {
     SAL: 800,
     COMM: null,
     DEPTNO: 20,
-    HIREDATE: new Date('1980-12-17 00:00:00.000 ')
+    HIREDATE: '1980-12-17T05:00:00.000Z'
   })
 })

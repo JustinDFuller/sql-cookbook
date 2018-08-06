@@ -15,7 +15,7 @@ function query (queryString) {
   return new Promise((resolve, reject) => {
     connection.query(queryString, function (error, results, fields) {
       if (error) return reject(error)
-      return resolve(results)
+      return resolve(JSON.parse(JSON.stringify(results)))
     })
   })
 }
