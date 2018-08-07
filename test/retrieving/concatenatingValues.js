@@ -1,4 +1,3 @@
-const _ = require('lodash')
 const test = require('ava')
 
 const concatenatingValues = require('../../src/retrieving/concatenatingValues')
