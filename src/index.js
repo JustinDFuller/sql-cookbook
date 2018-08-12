@@ -1,4 +1,8 @@
 const mysql = require('mysql')
+const createFunnel = require('promise-funnel')
+
+const funnel = createFunnel()
+funnel.cork()
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -9,16 +13,17 @@ const connection = mysql.createConnection({
 
 connection.connect(function (err) {
   if (err) console.error(err)
+  funnel.uncork()
 })
 
-function query (queryString) {
+const query = funnel.wrap(function (queryString) {
   return new Promise((resolve, reject) => {
     connection.query(queryString, function (error, results, fields) {
       if (error) return reject(error)
       return resolve(JSON.parse(JSON.stringify(results)))
     })
   })
-}
+})
 
 async function setup () {
   await query('DROP TABLE IF EXISTS EMP;')
