@@ -15,7 +15,7 @@
     "promise-funnel": "^1.0.2"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "standard": "^11.0.1"
+    "ava": "^2.3.0",
+    "standard": "^14.1.0"
   }
 }
