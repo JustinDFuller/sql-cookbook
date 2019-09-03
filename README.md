@@ -1,4 +1,7 @@
 # sql-cookbook
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/JustinDFuller/sql-cookbook.svg)](https://greenkeeper.io/)
+
 Working through "SQL-Cookbook" by Anthony Molinaro
 
 ## Versions
